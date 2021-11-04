@@ -1,0 +1,281 @@
+<template>
+  <div class="mainWindow">
+    <div class="infoContainer">
+      <div>
+        <h1 class="shadow2 grad1 logoText logoTop" style="">
+          SHITTY
+        </h1>
+        <h1 class="grad2 shadow logoText" style="text-align: center; margin-bottom: -1rem;">
+          SEAGULLZ
+        </h1>
+        <div style="filter: brightness(95%); display: flex; justify-content: space-evenly; margin: 2rem 0; margin-bottom: -1rem; text-align: center; z-index: 1; position: relative;">
+          <div class="circle bgrad1">Super<br>limited</div>
+          <div class="circle bgrad2">Provably<br>radical</div>
+          <div class="circle bgrad3">Flying rats</div>
+        </div>
+        <v-card class="infoCard" style="z-index: 0;">
+          <p style="margin-top: 1rem;">
+            Shitty Seagullz is an annoying collection of bird NFTs - kinda unique collectibles that make a lot of racket on the Ethereum blockchain.
+            A yet-to-be-determined amount of Seagullz have been shoddily slapped together from a veritable boatload of combinations - all using a run of the mill randomizer thing.
+          </p>
+
+          {{info}}
+          <div style="display: flex;">
+            <h3 style="color: gold; display: flex; justify-content: center; align-items: center; width: 50%;">
+              0/X minted!
+            </h3>
+            <div style="width:50%; display: flex; flex-direction: column; justify-content: center;">
+              <v-text-field id="amountTokens" v-model="mintAmount" style="box-shadow: 5px 5px 15px black; border-radius: 5px; font-family: 'Dokdo', arial, sans-serif; font-size: 3rem; text-shadow: 3px 3px 3px black!important;" class="centered-input"></v-text-field>
+              <v-btn class="button">SOON</v-btn>
+            </div>
+          </div>
+        </v-card>
+
+      </div>
+    </div>
+    <div class="gridContainer" style="width: 50%;">
+      <div class="theGrid">
+        <template v-for="i in 9">
+          <div :key="i">
+            <v-img :src="require('../assets/gullz/'+i+'.png')" max-width="14rem" style=" margin: 1rem;border-radius: 25px; box-shadow: 0 0 35px black;">
+            </v-img>
+          </div>
+        </template>
+      </div>
+    </div>
+    <div class="mobileImgContainer">
+      <v-img :src="require('../assets/gullz/1.png')" max-width="26rem" style=" margin: 1rem;border-radius: 25px; box-shadow: 0 0 35px black;">
+      </v-img>
+    </div>
+  </div>
+</template>
+
+<script>
+import Web3 from 'web3'
+export default {
+  name: 'ShittySeagullz',
+
+  data: () => ({
+    abi: [{
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "mint",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }],
+    addr: '0x7ae5C2B6e8a7b4048Fb76678F3c0358c7578805d',
+    info: '',
+    mintAmount: 0,
+    gullz: [
+      {
+        img: require('../assets/gullz/1.png')
+      }
+    ]
+  }),
+  methods: {
+    async mintGull () {
+      try {
+        const amount = document.getElementById('amountTokens').value
+        console.log('härhär', amount)
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+        this.info = accounts + " connected"
+
+        const web3 = new Web3(window.ethereum)
+
+        const GullzContract = await new web3.eth.Contract(this.abi, this.addr)
+        await GullzContract.methods.mint(amount).send({from: window.ethereum.selectedAddress, value: '40000000000000000' })
+        console.log('done')
+      } catch (e) {
+        this.info = e
+        console.log('mint fail ffs', e)
+      }
+
+    }
+  }
+}
+</script>
+
+<style scoped>
+@media (max-width: 1000px) {
+  .logoText {
+    font-size: 8rem;
+  }
+  .logoTop {
+    margin-bottom: 0;
+  }
+  .circle {
+    font-size: 2.5rem!important;
+    height: 6rem!important;
+    width: 6rem!important;
+  }
+}
+@media (max-width: 1500px) {
+
+  .mainWindow {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mobileImgContainer {
+    display: flex!important;
+  }
+  .gridContainer {
+    display: none;
+  }
+
+  .infoContainer {
+    width: 100%;
+    padding: 0!important;
+  }
+}
+.mobileImgContainer {
+  display: none;
+}
+.logoTop {
+  margin-bottom: -4rem;
+  text-align: center;
+}
+.mainWindow {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.infoContainer {
+  width: 50%;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@font-face {
+  font-family: "Dokdo-Regular";
+  src: local("Dokdo-Regular"),
+  url(../assets/fonts/Dokdo-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Dokdo";
+  src: local("Dokdo"),
+  url(../assets/fonts/EastSeaDokdo-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Grotesk";
+  src: local("Grotesk"),
+  url(../assets/fonts/hk-grotesk.medium.ttf) format("truetype");
+}
+body {
+  font-family: "Grotesk", Helvetica, sans-serif;
+}
+.centered-input >>> input {
+  text-align: center
+}
+h3 {
+  font-family: "Grotesk", Helvetica, sans-serif;
+  font-size: 2rem;
+}
+h1 {
+  font-family: "Dokdo", Arial, sans-serif;
+  font-size: 13rem;
+  line-height: 11.5rem;
+  filter: brightness(95%);
+}
+.shadow {
+  filter: drop-shadow(3px 3px rebeccapurple) drop-shadow(2px 2px mediumvioletred) drop-shadow(3px 3px deeppink) drop-shadow(15px 15px 10px black);
+  -webkit-text-stroke: 2px darkmagenta;
+  -webkit-font-smoothing: antialiased;
+}
+.shadow2 {
+  filter: drop-shadow(3px 3px rebeccapurple) drop-shadow(2px 2px mediumvioletred) drop-shadow(3px 3px deeppink) drop-shadow(15px 15px 10px black);
+  -webkit-text-stroke: 2px #333333;
+  -webkit-font-smoothing: antialiased;
+}
+.button {
+  background: linear-gradient(180deg, yellow, cyan);
+  height: 3rem!important;
+  font-size: 2.5rem!important;
+  font-family: "Dokdo", Helvetica, sans-serif;
+  color: blueviolet!important;
+  box-shadow: 5px 5px 15px black;
+}
+.circle {
+  font-family: "Dokdo-Regular", Helvetica, sans-serif;
+  font-size: 3.5rem;
+  line-height: 3rem;
+  word-break: keep-all;
+  line-break: revert;
+  overflow-x: visible;
+  font-weight: 900;
+  text-shadow: 5px 5px 10px black;
+  -webkit-text-stroke: 0.6px black;
+  box-shadow: 5px 5px 25px #111111;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.infoCard {
+  backdrop-filter: blur(10px) !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 0 35px black !important;
+  border: 12px solid blueviolet!important;
+  border-radius: 25px!important;
+  padding: 1rem 2rem;
+  text-shadow: 3px 3px 3px black;
+}
+.metal {
+  background: linear-gradient(
+      hsl(239, 50%, 30%) 15%,
+      hsl(239, 50%, 40%) 25%,
+      hsl(200, 60%, 50%) 35%,
+      hsl(100, 70%, 80%) 45%,
+      hsl(60, 100%, 98%) 50%,
+      hsl(240, 0%, 0%) 52%,
+      hsl(240, 10%, 10%) 60%,
+      hsl(240, 50%, 30%) 70%,
+      hsl(220, 70%, 60%) 80%,
+      hsl(212, 92%, 76%) 85%
+  );
+
+}
+.bgrad1 {
+  background: linear-gradient(180deg, cyan, deeppink);
+}
+.bgrad2 {
+  background: linear-gradient(180deg, magenta, yellow);
+}
+.bgrad3 {
+  background: linear-gradient(180deg, mediumpurple, chartreuse);
+}
+.grad1 {
+  background: linear-gradient(180deg, magenta, yellow);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.grad2 {
+  background: linear-gradient(180deg, yellow, cyan);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+p {
+  font-family: 'Grotesk', Helvetica, sans-serif;
+  font-size: 1.3rem;
+}
+.theGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "a b c" "d e f" "g h i";
+}
+</style>
