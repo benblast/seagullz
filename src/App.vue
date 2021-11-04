@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app dark style="width:100%;">
     <v-main>
       <ShittySeagullz/>
     </v-main>
@@ -22,8 +22,10 @@ export default {
 };
 </script>
 <style scoped>
+
 #app {
   background: url('./assets/bgimg7.png') no-repeat center!important;
   background-size: cover;
 }
+
 </style>

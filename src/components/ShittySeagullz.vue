@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="mobileImgContainer">
-      <v-img :src="require('../assets/gullz/1.png')" max-width="26rem" style=" margin: 1rem;border-radius: 25px; box-shadow: 0 0 35px black;">
+      <v-img :src="require('../assets/gullz/1.png')" max-width="20rem" style=" margin: 1rem;border-radius: 25px; box-shadow: 0 0 35px black;">
       </v-img>
     </div>
   </div>
@@ -102,17 +102,22 @@ export default {
 </script>
 
 <style scoped>
+html {
+  width: 100%!important;
+}
 @media (max-width: 1000px) {
   .logoText {
-    font-size: 8rem;
+    font-size: 6rem;
   }
   .logoTop {
     margin-bottom: 0;
   }
   .circle {
-    font-size: 2.5rem!important;
-    height: 6rem!important;
-    width: 6rem!important;
+    font-size: 1.5rem!important;
+    line-height: 1rem!important;
+    height: 5rem!important;
+    width: 5rem!important;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 1500px) {
