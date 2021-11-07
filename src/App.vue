@@ -8,14 +8,12 @@
 </template>
 
 <script>
-import CheckGullz from './components/CheckGullz'
 import ShittySeagullz from "./components/ShittySeagullz"
 
 export default {
   name: 'App',
 
   components: {
-    CheckGullz,
     ShittySeagullz
   },
 
