@@ -1,7 +1,7 @@
 <template>
-  <div style="margin-top: 3rem;">
+  <div style="margin-top: 6rem;">
     <div style="width: 100%; color: deeppink; font-family: 'Dokdo'; letter-spacing: -5px; -webkit-text-stroke: 2px purple; font-size: 3rem; background: yellowgreen; display: flex; justify-content: center; align-items: center;">
-      <h2>SEAGULLS ARE COOL</h2>
+      <h2 style="text-align: center">SEAGULLS ARE COOL</h2>
     </div>
     <v-parallax
         height="450"
