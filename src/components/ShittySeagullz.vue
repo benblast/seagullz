@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <div class="mainWindow">
     <div class="infoContainer">
       <div>
@@ -31,28 +33,20 @@
 
       </div>
     </div>
-    <div class="gridContainer" style="width: 50%; display: none;">
-      <div class="theGrid" style=" margin-top: 3rem;">
-        <template v-for="i in 9">
-          <div :key="i">
-            <v-img :src="require('../assets/gullz/'+i+'.png')" max-width="14rem" style=" margin: 1rem;border-radius: 25px; box-shadow: 0 0 35px black;">
-            </v-img>
-          </div>
-        </template>
-      </div>
-    </div>
-    <div class="mobileImgContainer">
-      <v-img :src="require('../assets/gullz/1.png')" max-width="20rem" style=" margin: 1rem;border-radius: 25px; box-shadow: 0 0 35px black;">
-      </v-img>
-    </div>
   </div>
+  <MidSection/>
+</div>
 </template>
 
 <script>
 import Web3 from 'web3'
+import MidSection from "./MidSection"
 export default {
   name: 'ShittySeagullz',
 
+  components: {
+    MidSection
+  },
   data: () => ({
     abi: [{
       "inputs": [
@@ -100,14 +94,13 @@ export default {
 </script>
 
 <style scoped>
-html {
-  width: 100%!important;
-  overflow-x: hidden;
-}
+
 @media (max-width: 1000px) {
   .logoText {
     font-size: 12rem!important;
-    line-height: 20rem;
+  }
+  .logoTop {
+    line-height: 12rem!important;
   }
   .shadow2 {
     -webkit-text-stroke: 1px darkmagenta!important;
@@ -123,20 +116,18 @@ html {
   }
 }
 
-.mobileImgContainer {
-  display: none;
-}
 .logoTop {
   z-index: 2;
   position: relative;
-  margin: -4rem 0 -4rem 0;
   text-align: center;
+  line-height: 20rem;
   font-size: 20rem;
 }
 .mainWindow {
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 100vh;
   align-items: center;
 }
 .infoContainer {

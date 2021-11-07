@@ -1,8 +1,6 @@
 <template>
-  <v-app dark style="width:100%;">
-    <v-main>
-      <ShittySeagullz/>
-    </v-main>
+  <v-app dark class="ass">
+    <ShittySeagullz style=""/>
   </v-app>
 </template>
 
@@ -13,7 +11,7 @@ export default {
   name: 'App',
 
   components: {
-    ShittySeagullz
+    ShittySeagullz,
   },
 
   data: () => ({
@@ -22,8 +20,7 @@ export default {
 };
 </script>
 <style scoped>
-
-#app {
+.ass {
   background: url('./assets/bgimg7_filesize3_gullz2.png') no-repeat center!important;
   background-size: cover!important;
 }
