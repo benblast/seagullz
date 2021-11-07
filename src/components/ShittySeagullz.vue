@@ -34,22 +34,16 @@
       </div>
     </div>
   </div>
-  <MidSection/>
-  <SecondSection/>
+
 </div>
 </template>
 
 <script>
 import Web3 from 'web3'
-import MidSection from "./MidSection"
-import SecondSection from "./SecondSection"
+
 export default {
   name: 'ShittySeagullz',
 
-  components: {
-    MidSection,
-    SecondSection
-  },
   data: () => ({
     abi: [{
       "inputs": [

@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: darkcyan; height: 100vh;">
+  <div style="background-color: darkcyan; min-height: 100vh;">
     <h1>
       wassup mah seagullz
     </h1>
