@@ -7,8 +7,8 @@
         </h1>
 
         <div style="filter: brightness(95%); display: flex; justify-content: space-evenly; margin: 2rem 0; margin-bottom: -1rem; text-align: center; z-index: 1; position: relative;">
-          <div class="circle bgrad1">Super<br>Limited</div>
           <div class="circle bgrad2">Provably<br>Radical</div>
+          <div class="circle bgrad1">Super<br>Limited</div>
           <div class="circle bgrad3">Completely Useless</div>
         </div>
         <v-card class="infoCard" style="z-index: 0;">
@@ -102,6 +102,7 @@ export default {
 <style scoped>
 html {
   width: 100%!important;
+  overflow-x: hidden;
 }
 @media (max-width: 1000px) {
   .logoText {
@@ -113,34 +114,15 @@ html {
   }
 
   .circle {
-    font-size: 1.5rem!important;
+    font-size: 2rem!important;
     line-height: 1.5rem!important;
-    letter-spacing: 1px;
-    height: 5rem!important;
+    letter-spacing: -5px;
+    height: 6.5rem!important;
     width: 5rem!important;
     text-transform: uppercase;
   }
 }
-@media (max-width: 1500px) {
 
-  .mainWindow {
-    flex-direction: column;
-    align-items: center;
-  }
-  .mobileImgContainer {
-    display: flex!important;
-  }
-  .gridContainer {
-    display: none;
-  }
-
-  .infoContainer {
-    width: 75% !important;
-    padding: 0!important;
-  }
-
-
-}
 .mobileImgContainer {
   display: none;
 }
@@ -205,14 +187,15 @@ h1 {
 }
 .circle {
   font-family: "Dokdo", Helvetica, sans-serif;
-  font-size: 3.5rem;
-  line-height: 3rem;
+  font-size: 3rem;
+  line-height: 2rem;
+  letter-spacing: -5px;
   word-break: keep-all;
   text-shadow: 5px 5px 10px black;
   -webkit-text-stroke: 0.8px black;
   box-shadow: 5px 5px 25px #111111;
-  height: 8rem;
-  width: 8rem;
+  height: 9rem;
+  width: 7rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
