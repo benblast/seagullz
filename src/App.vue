@@ -8,12 +8,14 @@
 </template>
 
 <script>
+import CheckGullz from './components/CheckGullz'
 import ShittySeagullz from "./components/ShittySeagullz"
 
 export default {
   name: 'App',
 
   components: {
+    CheckGullz,
     ShittySeagullz
   },
 
@@ -25,8 +27,8 @@ export default {
 <style scoped>
 
 #app {
-  background: url('./assets/bgimg7.png') no-repeat center!important;
-  background-size: cover;
+  background: url('./assets/bgimg7_filesize3_gullz2.png') no-repeat center!important;
+  background-size: cover!important;
 }
 
 </style>

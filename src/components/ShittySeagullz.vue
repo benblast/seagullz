@@ -7,9 +7,9 @@
         </h1>
 
         <div style="filter: brightness(95%); display: flex; justify-content: space-evenly; margin: 2rem 0; margin-bottom: -1rem; text-align: center; z-index: 1; position: relative;">
-          <div class="circle bgrad1">Super<br>limited</div>
-          <div class="circle bgrad2">Provably<br>radical</div>
-          <div class="circle bgrad3">Flying rats</div>
+          <div class="circle bgrad1">Super<br>Limited</div>
+          <div class="circle bgrad2">Provably<br>Radical</div>
+          <div class="circle bgrad3">Completely Useless</div>
         </div>
         <v-card class="infoCard" style="z-index: 0;">
           <p style="margin-top: 1rem;">
@@ -31,8 +31,8 @@
 
       </div>
     </div>
-    <div class="gridContainer" style="width: 50%;">
-      <div class="theGrid">
+    <div class="gridContainer" style="width: 50%; display: none;">
+      <div class="theGrid" style=" margin-top: 3rem;">
         <template v-for="i in 9">
           <div :key="i">
             <v-img :src="require('../assets/gullz/'+i+'.png')" max-width="14rem" style=" margin: 1rem;border-radius: 25px; box-shadow: 0 0 35px black;">
@@ -67,7 +67,7 @@ export default {
       "stateMutability": "payable",
       "type": "function"
     }],
-    addr: '0x7ae5C2B6e8a7b4048Fb76678F3c0358c7578805d',
+    addr: '',
     info: '',
     mintAmount: 0,
     gullz: [
@@ -114,7 +114,8 @@ html {
 
   .circle {
     font-size: 1.5rem!important;
-    line-height: 1rem!important;
+    line-height: 1.5rem!important;
+    letter-spacing: 1px;
     height: 5rem!important;
     width: 5rem!important;
     text-transform: uppercase;
@@ -134,7 +135,7 @@ html {
   }
 
   .infoContainer {
-    width: 100%;
+    width: 75% !important;
     padding: 0!important;
   }
 
@@ -207,11 +208,8 @@ h1 {
   font-size: 3.5rem;
   line-height: 3rem;
   word-break: keep-all;
-  line-break: revert;
-  overflow-x: visible;
-  font-weight: 900;
   text-shadow: 5px 5px 10px black;
-  -webkit-text-stroke: 0.6px black;
+  -webkit-text-stroke: 0.8px black;
   box-shadow: 5px 5px 25px #111111;
   height: 8rem;
   width: 8rem;
