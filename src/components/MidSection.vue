@@ -9,11 +9,6 @@
         style="filter: brightness(95%)"
         class="theParallax"
     ></v-parallax>
-    <div style="display: flex; flex-wrap: wrap;display: none;">
-      <template v-for="i in 44" style="display: flex; flex-wrap: wrap;">
-        <v-img :src="require(`../assets/gullz/${i+1}.png`)" width="150px" :key="i"></v-img>
-      </template>
-    </div>
   </div>
 </template>
 
