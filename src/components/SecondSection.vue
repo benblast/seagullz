@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <v-card>
-      <v-card-title>
-        WASSUP
-      </v-card-title>
-      <v-card-text>
-        Mah main man
-      </v-card-text>
-    </v-card>
+  <div style="background-color: darkcyan; height: 100vh;">
+    <h1>
+      wassup mah seagullz
+    </h1>
+    <p>
+      all good?
+    </p>
   </div>
 </template>
 

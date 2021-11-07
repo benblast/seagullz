@@ -1,5 +1,5 @@
 <template>
-  <v-app dark class="ass">
+  <v-app class="ass">
     <ShittySeagullz style=""/>
   </v-app>
 </template>
@@ -21,8 +21,10 @@ export default {
 </script>
 <style scoped>
 .ass {
-  background: url('./assets/bgimg7_filesize3_gullz2.png') no-repeat center!important;
+
+  background: url('./assets/bgimg7_filesize3_gullz.png') no-repeat center!important;
   background-size: cover!important;
+  height: 100vh!important;
 }
 
 </style>
