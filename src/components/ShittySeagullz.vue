@@ -2,12 +2,10 @@
   <div class="mainWindow">
     <div class="infoContainer">
       <div>
-        <h1 class="shadow2 grad1 logoText logoTop" style="">
-          SHITTY
+        <h1 class="shadow2 grad1 grad2 logoText logoTop" style="">
+          Gullz
         </h1>
-        <h1 class="grad2 shadow logoText" style="text-align: center; margin-bottom: -1rem;">
-          SEAGULLZ
-        </h1>
+
         <div style="filter: brightness(95%); display: flex; justify-content: space-evenly; margin: 2rem 0; margin-bottom: -1rem; text-align: center; z-index: 1; position: relative;">
           <div class="circle bgrad1">Super<br>limited</div>
           <div class="circle bgrad2">Provably<br>radical</div>
@@ -25,7 +23,7 @@
               0/X minted!
             </h3>
             <div style="width:50%; display: flex; flex-direction: column; justify-content: center;">
-              <v-text-field id="amountTokens" v-model="mintAmount" style="box-shadow: 5px 5px 15px black; border-radius: 5px; font-family: 'Dokdo', arial, sans-serif; font-size: 3rem; text-shadow: 3px 3px 3px black!important;" class="centered-input"></v-text-field>
+              <v-text-field id="amountTokens" v-model="mintAmount" style="box-shadow: 5px 5px 15px black; border-radius: 5px; font-family: 'East Sea Dokdo', arial, sans-serif; font-size: 3rem; text-shadow: 3px 3px 3px black!important;" class="centered-input"></v-text-field>
               <v-btn class="button">SOON</v-btn>
             </div>
           </div>
@@ -107,11 +105,13 @@ html {
 }
 @media (max-width: 1000px) {
   .logoText {
-    font-size: 6rem;
+    font-size: 12rem!important;
+    line-height: 20rem;
   }
-  .logoTop {
-    margin-bottom: 0;
+  .shadow2 {
+    -webkit-text-stroke: 1px darkmagenta!important;
   }
+
   .circle {
     font-size: 1.5rem!important;
     line-height: 1rem!important;
@@ -137,18 +137,24 @@ html {
     width: 100%;
     padding: 0!important;
   }
+
+
 }
 .mobileImgContainer {
   display: none;
 }
 .logoTop {
-  margin-bottom: -4rem;
+  z-index: 2;
+  position: relative;
+  margin: -4rem 0 -4rem 0;
   text-align: center;
+  font-size: 20rem;
 }
 .mainWindow {
   display: flex;
   justify-content: center;
   width: 100%;
+  align-items: center;
 }
 .infoContainer {
   width: 50%;
@@ -157,16 +163,7 @@ html {
   flex-direction: column;
   align-items: center;
 }
-@font-face {
-  font-family: "Dokdo-Regular";
-  src: local("Dokdo-Regular"),
-  url(../assets/fonts/Dokdo-Regular.ttf) format("truetype");
-}
-@font-face {
-  font-family: "Dokdo";
-  src: local("Dokdo"),
-  url(../assets/fonts/EastSeaDokdo-Regular.ttf) format("truetype");
-}
+
 @font-face {
   font-family: "Grotesk";
   src: local("Grotesk"),
@@ -183,9 +180,8 @@ h3 {
   font-size: 2rem;
 }
 h1 {
-  font-family: "Dokdo", Arial, sans-serif;
-  font-size: 13rem;
-  line-height: 11.5rem;
+  font-family: "East Sea Dokdo", Arial, sans-serif;
+  line-height: 25.5rem;
   filter: brightness(95%);
 }
 .shadow {
@@ -195,19 +191,19 @@ h1 {
 }
 .shadow2 {
   filter: drop-shadow(3px 3px rebeccapurple) drop-shadow(2px 2px mediumvioletred) drop-shadow(3px 3px deeppink) drop-shadow(15px 15px 10px black);
-  -webkit-text-stroke: 2px #333333;
+  -webkit-text-stroke: 2px darkmagenta;
   -webkit-font-smoothing: antialiased;
 }
 .button {
   background: linear-gradient(180deg, yellow, cyan);
   height: 3rem!important;
   font-size: 2.5rem!important;
-  font-family: "Dokdo", Helvetica, sans-serif;
+  font-family: "East Sea Dokdo", Helvetica, sans-serif;
   color: blueviolet!important;
   box-shadow: 5px 5px 15px black;
 }
 .circle {
-  font-family: "Dokdo-Regular", Helvetica, sans-serif;
+  font-family: "Dokdo", Helvetica, sans-serif;
   font-size: 3.5rem;
   line-height: 3rem;
   word-break: keep-all;
