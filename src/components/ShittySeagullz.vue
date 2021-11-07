@@ -187,7 +187,7 @@ h1 {
 }
 .circle {
   font-family: "Dokdo", Helvetica, sans-serif;
-  font-size: 3rem;
+  font-size: 3.5rem;
   line-height: 2rem;
   letter-spacing: -5px;
   word-break: keep-all;
