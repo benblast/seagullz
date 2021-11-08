@@ -49,6 +49,9 @@ export default {
 };
 </script>
 <style scoped>
+html {
+  max-width: 100% !important;
+}
 .coolWrap {
   background: url('../assets/secondCard/docks.png') no-repeat bottom right!important;
   background-size: cover;
@@ -69,6 +72,8 @@ export default {
 }
 .mainWrapper {
   background-color: darkcyan;
+  background-origin: content-box;
+
 }
 
 .screen {

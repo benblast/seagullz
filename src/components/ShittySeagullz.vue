@@ -1,6 +1,4 @@
 <template>
-  <div>
-
   <div class="mainWindow">
     <div class="infoContainer">
       <div>
@@ -30,12 +28,9 @@
             </div>
           </div>
         </v-card>
-
       </div>
     </div>
   </div>
-
-</div>
 </template>
 
 <script>
@@ -110,6 +105,17 @@ export default {
     height: 6.5rem!important;
     width: 5rem!important;
     text-transform: uppercase;
+  }
+
+  .mainWindow {
+  }
+  .infoContainer {
+    width: 100% !important;
+    margin: 0 0 1rem 0!important;
+    padding: 0!important;
+  }
+  .infoCard p {
+    font-size: 1rem!important;
   }
 }
 

@@ -1,7 +1,7 @@
 <template>
   <v-app class="ass">
     <ShittySeagullz style=""/>
-    <MidSection/>
+    <MidSection style=""/>
     <SecondSection/>
   </v-app>
 </template>
@@ -27,7 +27,7 @@ export default {
 <style scoped>
 .ass {
 
-  background: url('./assets/bgimg7_filesize3_gullz_narrow.png') no-repeat center!important;
+  background: url('./assets/bgimg7_filesize3_gullz_narrowtest.png') no-repeat center!important;
   background-size: cover!important;
   height: 100vh!important;
 }
