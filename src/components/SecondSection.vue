@@ -63,11 +63,12 @@ export default {
   font-family: 'Dokdo', Arial, sans-serif;
   font-size: 4rem;
   letter-spacing: -8px;
+  line-height: 4rem;
   -webkit-text-stroke: 1px rebeccapurple;
+  text-align: center;
 }
 .mainWrapper {
   background-color: darkcyan;
-  padding: 3rem;
 }
 
 .screen {
