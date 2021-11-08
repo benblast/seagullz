@@ -1,11 +1,16 @@
 <template>
-  <div style="background-color: darkcyan; min-height: 100vh;">
-    <h1>
-      wassup mah seagullz
-    </h1>
-    <p>
-      all good?
-    </p>
+  <div class="mainWrapper">
+    <div class="coolWrap screen">
+      <div class="hotWrap screen">
+        <h1>
+          wassup mah seagullz
+        </h1>
+        <p>
+          all good?
+        </p>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -44,6 +49,30 @@ export default {
 };
 </script>
 <style scoped>
+.coolWrap {
+  background: url('../assets/secondCard/docks.png') no-repeat bottom right!important;
+  background-size: cover;
+}
+.hotWrap {
+  background: url('../assets/secondCard/rm_silhouette.png') no-repeat top left!important;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dokdo', Arial, sans-serif;
+  font-size: 4rem;
+  letter-spacing: -8px;
+  -webkit-text-stroke: 1px rebeccapurple;
+}
+.mainWrapper {
+  background-color: darkcyan;
+  padding: 3rem;
+}
 
+.screen {
+  min-height: 100vh!important;
+  min-width: 100% !important;
+}
 
 </style>
