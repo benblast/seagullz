@@ -136,6 +136,7 @@ export default {
 .infoContainer {
   width: 50%;
   padding: 0 2rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
